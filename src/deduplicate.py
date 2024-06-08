@@ -1,6 +1,10 @@
 # deduplicate.py
 
 def remove_duplicates(file_path):
+
+
+
+
     try:
         # 读取文件内容
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -19,3 +23,8 @@ def remove_duplicates(file_path):
         print(f"去重完成，处理后的文件保存在 {file_path}")
     except Exception as e:
         print(f"处理文件时出现错误: {e}")
+
+
+if __name__ == "__main__":
+    file_path = '../docs/server_addresses.txt'
+    remove_duplicates(file_path)
