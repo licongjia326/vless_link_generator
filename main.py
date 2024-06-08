@@ -36,7 +36,7 @@ def run_task():
 
     # 文件去重
     remove_duplicates('docs/ports.txt')
-    remove_duplicates('docs/server_addresses.txt')
+    remove_duplicates('docs/ip_addresses.txt')
     remove_duplicates('docs/vless_list.txt')
 
     # 服务器地址和端口文件路径
