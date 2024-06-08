@@ -1,9 +1,11 @@
 import logging
+import time
+from watchdog.observers import Observer
+from watchdog_handler import MyHandler
 from src.generator import batch_generate_vless_links
 from src.file_reader import read_list_from_file
 from src.utils import setup_logging, load_config
 from src.deduplicate import remove_duplicates
-
 
 def save_links_to_file(links, filename='docs/vless_list.txt'):
     """
@@ -20,10 +22,8 @@ def save_links_to_file(links, filename='docs/vless_list.txt'):
     except Exception as e:
         logging.error(f"Error saving links to file {filename}: {e}")
 
-def main():
-    """
-    主程序入口。
-    """
+def run_task():
+    """执行主要任务"""
     # 设置日志记录
     setup_logging()
 
@@ -33,7 +33,8 @@ def main():
         logging.error("Failed to load configuration. Exiting program.")
         return
 
-    #文件去重
+
+    # 文件去重
     remove_duplicates('docs/ports.txt')
     remove_duplicates('docs/server_addresses.txt')
     remove_duplicates('docs/vless_list.txt')
@@ -72,7 +73,19 @@ def main():
     # 将生成的链接保存到文件中
     save_links_to_file(vless_links)
 
+def main():
+    """主程序入口"""
+    event_handler = MyHandler()
+    observer = Observer()
+    observer.schedule(event_handler, path='docs', recursive=False)
+    observer.start()
 
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()
 
 if __name__ == "__main__":
     main()
