@@ -39,9 +39,9 @@ def main():
     remove_duplicates('docs/vless_list.txt')
 
     # 服务器地址和端口文件路径
-    server_address_file = "docs/server_addresses.txt"  # 或 "server_addresses.csv"
+    server_address_file = "docs/ip_addresses.txt"  # 或 "server_addresses.csv"
     port_file = "docs/ports.txt"  # 或 "ports.csv"
-    base_remark = "remark_"  # 基础备注字符串
+    base_remark = "*_"  # 基础备注字符串
 
     # 从文件中读取服务器地址
     server_addresses = read_list_from_file(server_address_file)

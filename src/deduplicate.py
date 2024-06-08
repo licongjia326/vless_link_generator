@@ -2,9 +2,6 @@
 
 def remove_duplicates(file_path):
 
-
-
-
     try:
         # 读取文件内容
         with open(file_path, 'r', encoding='utf-8') as file:
