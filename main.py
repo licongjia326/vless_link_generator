@@ -2,6 +2,8 @@ import logging
 from src.generator import batch_generate_vless_links
 from src.file_reader import read_list_from_file
 from src.utils import setup_logging, load_config
+from src.deduplicate import remove_duplicates
+
 
 def save_links_to_file(links, filename='docs/vless_list.txt'):
     """
@@ -30,6 +32,11 @@ def main():
     if config is None:
         logging.error("Failed to load configuration. Exiting program.")
         return
+
+    #文件去重
+    remove_duplicates('docs/ports.txt')
+    remove_duplicates('docs/server_addresses.txt')
+    remove_duplicates('docs/vless_list.txt')
 
     # 服务器地址和端口文件路径
     server_address_file = "docs/server_addresses.txt"  # 或 "server_addresses.csv"
@@ -64,6 +71,8 @@ def main():
 
     # 将生成的链接保存到文件中
     save_links_to_file(vless_links)
+
+
 
 if __name__ == "__main__":
     main()
