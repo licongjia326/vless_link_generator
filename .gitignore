@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# 敏感文档所在目录
+docs/
+
+
 # Distribution / packaging
 .Python
 env/
