@@ -3,7 +3,7 @@ from src.generator import batch_generate_vless_links
 from src.file_reader import read_list_from_file
 from src.utils import setup_logging, load_config
 
-def save_links_to_file(links, filename='vless_list.txt'):
+def save_links_to_file(links, filename='docs/vless_list.txt'):
     """
     将生成的 VLESS 链接保存到文件中。
 
@@ -32,8 +32,8 @@ def main():
         return
 
     # 服务器地址和端口文件路径
-    server_address_file = "server_addresses.txt"  # 或 "server_addresses.csv"
-    port_file = "ports.txt"  # 或 "ports.csv"
+    server_address_file = "docs/server_addresses.txt"  # 或 "server_addresses.csv"
+    port_file = "docs/ports.txt"  # 或 "ports.csv"
     base_remark = "remark_"  # 基础备注字符串
 
     # 从文件中读取服务器地址
