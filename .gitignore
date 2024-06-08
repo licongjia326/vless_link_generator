@@ -8,7 +8,7 @@ __pycache__/
 
 # 敏感文档所在目录
 docs/
-
+config/
 
 # Distribution / packaging
 .Python
