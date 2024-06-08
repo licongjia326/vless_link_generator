@@ -1,8 +1,7 @@
-根据你提供的代码文件，我将为该项目撰写一个详细的 README 文档，帮助使用者更好地理解和使用这个项目。
 
 ### README.md
 
-```markdown
+markdown
 # VLESS Link Generator
 
 ## 简介
@@ -10,6 +9,7 @@
 
 ## 目录结构
 
+```
 vless_link_generator/
 ├── config/
 │   └── config.yaml          # 配置文件
@@ -61,6 +61,7 @@ path: "%2F%3Fed%3D2560"
 创建包含服务器地址和端口的文件，支持 `.txt` 或 `.csv` 格式。例如：
 
 `server_addresses.txt`：
+
 ```
 server1.example.com
 server2.example.com
