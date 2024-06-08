@@ -47,7 +47,7 @@ vless_link_generator/
 在 `config/config.yaml` 中设置固定的配置参数，例如 UUID、加密方式、安全性等。
 示例：
 ```yaml
-uuid: "947e18e7-be03-4c74-83a3-95011f451250"
+uuid: ""
 encryption: "none"
 security: ""
 sni: "ancient-star-a25e.wb46pt4tfx.workers.dev"
