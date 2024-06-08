@@ -7,7 +7,7 @@ from src.file_reader import read_list_from_file
 from src.utils import setup_logging, load_config
 from src.deduplicate import remove_duplicates
 
-def save_links_to_file(links, filename='docs/vless_list.txt'):
+def save_links_to_file(links, filename='/Users/qiao/Desktop/vless_list.txt'):
     """
     将生成的 VLESS 链接保存到文件中。
 
